@@ -4,20 +4,25 @@ class ListsController < ApplicationController
   end
 
   def new
-    @lists = List.new
+    @list = List.new
   end
 
   def show
-    @lists = List.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def create
-    @lists = List.new(list_params)
+    @list = List.new(list_params)
     if @list.save
       redirect_to list_path(@list), notice: 'List was successfuly created ;)'
     else
       render :new
     end
+  end
+
+  def destroy
+    @list = List.find(params[:id]).destroy
+    redirect_to lists_path
   end
 
   private

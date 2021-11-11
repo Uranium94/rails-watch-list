@@ -1,0 +1,9 @@
+<h1>Attention: Assurez vous de bien etre a l'aise en naviguant au sein terminal ainsi que </h1>
+
+<div>
+<% @lists.each do |list| %>
+<%= link_to list.name, list_path(list) %>
+<% end %>
+</div>
+
+<%= link_to 'Add new list', new_list_path %>

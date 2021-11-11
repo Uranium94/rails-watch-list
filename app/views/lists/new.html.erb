@@ -1,0 +1,6 @@
+<%= simple_form_for(@list) do |f| %>
+<%= f.input :name, label: "list name:" %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'Go Back', lists_path%>
